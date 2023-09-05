@@ -12,6 +12,6 @@ public interface PlanetService {
     Iterable<PlanetDTO> findAll();
     PlanetDTO findById(Long id);
     void insert(PlanetDTO planetDTO);
-    void update(PlanetDTO planetDTO);
+    void update(Long id, PlanetDTO planetDTO);
     void delete(Long id);
 }
