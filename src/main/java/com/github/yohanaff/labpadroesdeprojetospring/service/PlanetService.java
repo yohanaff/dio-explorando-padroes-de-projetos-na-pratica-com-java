@@ -1,6 +1,7 @@
 package com.github.yohanaff.labpadroesdeprojetospring.service;
 
-import com.github.yohanaff.labpadroesdeprojetospring.dto.PlanetDTO;
+import com.github.yohanaff.labpadroesdeprojetospring.dto.PlanetRequestDTO;
+import com.github.yohanaff.labpadroesdeprojetospring.dto.PlanetResponseDTO;
 
 /**
  * Interface that defines the <b>Strategy</b> pattern in the planet domain. With
@@ -9,9 +10,13 @@ import com.github.yohanaff.labpadroesdeprojetospring.dto.PlanetDTO;
  * @author yohanaff
  */
 public interface PlanetService {
-    Iterable<PlanetDTO> findAll();
-    PlanetDTO findById(Long id);
-    void insert(PlanetDTO planetDTO);
-    void update(Long id, PlanetDTO planetDTO);
+    Iterable<PlanetResponseDTO> findAll();
+
+    PlanetResponseDTO findById(Long id);
+
+    void insert(PlanetRequestDTO planetRequestDTO);
+
+    void update(Long id, PlanetRequestDTO planetRequestDTO);
+
     void delete(Long id);
 }

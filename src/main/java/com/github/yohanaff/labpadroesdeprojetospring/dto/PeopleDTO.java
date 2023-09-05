@@ -3,6 +3,7 @@ package com.github.yohanaff.labpadroesdeprojetospring.dto;
 import java.util.List;
 
 public record PeopleDTO(
+        Long id,
         String name,
         String height,
         String mass,

@@ -1,19 +1,22 @@
 package com.github.yohanaff.labpadroesdeprojetospring.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.yohanaff.labpadroesdeprojetospring.dto.PeopleDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@ToString
 public class People {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -29,9 +32,7 @@ public class People {
     private String birthYear;
     private String gender;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "planet_id")
-    private Planet homeworld;
+    private String homeworld;
 
     @ElementCollection
     private List<String> films;
